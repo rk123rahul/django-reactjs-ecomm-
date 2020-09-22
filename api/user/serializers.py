@@ -11,7 +11,7 @@ from .models import CustomUser
 
 
 
-class UserSerializer (serializers.hperlinkedModelsSerializer):
+class UserSerializer (serializers.HyperlinkedModelSerializer):
         
     def create(self, validated_data):
         password = validated_data.pop('password',None)
@@ -34,4 +34,4 @@ class UserSerializer (serializers.hperlinkedModelsSerializer):
     class Meta:
         model = CustomUser
         extra_kwargs = {'password':{'write_only':True}}
-        fields = ('name','email','password','phone','gender','is_active','is_staff','is_superuser')
+        fields = ('name','email','password','phone','is_active','is_staff','is_superuser') 

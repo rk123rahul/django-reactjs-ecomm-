@@ -3,7 +3,7 @@ from .models import Product
 
 
 
-class ProductSerializer(serializers.Serializer):
+class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
 

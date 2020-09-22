@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from .serializers import ProductSerializer
-from .models import Category
+from .models import Product
 
 # Create your views here.
 class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all().order_by('id')
+    queryset = Product.objects.all().order_by('id')
     serializer_class = ProductSerializer
